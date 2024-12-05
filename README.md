@@ -1,29 +1,30 @@
-# Laboratory Work 2
+Lab 2: Sistem de Detectare a Schimbărilor în Fișiere
 
-## File Change Detection System
+Acesta este un proiect educațional creat în Java, care implementează un sistem de detectare a schimbărilor în fișiere, similar cu funcționalitățile unui sistem de control al versiunilor (VCS). Proiectul permite monitorizarea și gestionarea modificărilor dintr-un director specificat în timp real.
 
-This is a File Change Detection System (a simplified version of VCS) that monitors and detects changes in documents
-within a specified directory. The system is designed to monitor a designated folder, offering Git-like functionality
-for tracking changes in files. The system is designed to be used in a command-line environment.
+Structura Proiectului
 
-## Lab Tasks
+Pachetul lab_2
 
-### Base Laboratory (8 Grade)
+Clase principale:
 
-In the base laboratory, the program offers an interactive command line interface for the user to monitor changes in a folder. Users can perform three actions:
+Main
 
-1. **commit**: Update the snapshot time to the current time to simulate  change detection since the previous snapshot. This action resets the state.
-2.  **info <filename>**: Display general information about a file. Information varies based on the file type (extension). Supported file types include text, image, and program files.
-3. **status**: Show changes in the files during the snapshot time and current time.
+Punctul de intrare al aplicației. Inițializează sistemul de snapshot, repository-ul și bucla principală de execuție a aplicației.
 
-### Improved Laboratory (9 Grade)
-In the improved laboratory, the program can also detect when files are added or deleted in the specified folder, in addition to changes within existing files.
+AppLoop (lab_2.behavior)
 
-### Working System (10 Grade)
+Gestionează interfața interactivă cu utilizatorul, permițând acestuia să interacționeze cu sistemul.
 
-In the working system, the program detects changes in real-time. It automatically runs a detection flow every 5 seconds and prints each change to the console. The user can continue to use the console to call actions without interruption.
+Document (lab_2.files)
 
-## Usage
+Reprezintă fișierele monitorizate. Clasele derivate pot extinde această clasă pentru a sprijini diferite tipuri de fișiere (text, imagini, fișiere de cod).
 
-This program is designed for educational purposes and serves as a practical exercise in object-oriented programming, emphasizing inheritance and polymorphism.
+Repository (lab_2.tracker)
+
+Menține lista fișierelor monitorizate și gestionează operațiunile de verificare a modificărilor.
+
+SnapshotSys (lab_2.tracker)
+
+Gestionează funcționalitatea de snapshot și oferă posibilitatea de a compara starea fișierelor la momente diferite.
 
